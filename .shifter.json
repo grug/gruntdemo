@@ -1,0 +1,8 @@
+{
+    "coverage": false,
+    "lint": "config",
+    "clean": true,
+    "excludes": [
+        "node_modules"
+    ]
+}

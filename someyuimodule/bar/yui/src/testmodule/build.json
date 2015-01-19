@@ -1,0 +1,10 @@
+{
+    "name": "testyuimodule",
+    "builds": {
+        "testyuimodule": {
+            "jsfiles": [
+                "test.js"
+            ]
+        }
+    }
+}
