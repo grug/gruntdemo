@@ -4,6 +4,10 @@ module.exports = function(grunt) {
 
     // Project configuration.
     grunt.initConfig({
+        jshint: {
+            options: {jshintrc: '.jshintrc'},
+            files: ['**/*.js', '!**/node_modules/**', '!**/yui/build/**', '!**/amd/build/**', '!Gruntfile.js']
+        },
         uglify: {
             dynamic_mappings: {
                 files: grunt.file.expandMapping(['**/src/*.js', '!**/node_modules/**'], '', {
@@ -98,8 +102,9 @@ module.exports = function(grunt) {
         }
     };
 
-    // Register the uglify task.
+    // Register NPM tasks.
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
 
     // Register the shifter task.
     grunt.registerTask('shifter', 'Run Shifter against the current directory', tasks.shifter);
