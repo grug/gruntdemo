@@ -1,1 +1,3 @@
 /node_modules/
+/someamdmodule/amd/build/
+/someyuimodule/bar/yui/build/
