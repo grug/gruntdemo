@@ -73,7 +73,7 @@ module.exports = function(grunt) {
             }
             
             // Actually run shifter.
-            shifter = exec(process.cwd() + '/node_modules/.bin/shifter', args, {
+            shifter = exec(process.cwd() + '/node_modules/shifter/bin/shifter', args, {
                 cwd: process.env.PWD,
                 stdio: 'inherit',
                 env: process.env
@@ -96,6 +96,7 @@ module.exports = function(grunt) {
             grunt.task.run('shifter');
         // Are we in an AMD directory?
         } else if (path.basename(process.env.PWD) == 'amd') {
+            grunt.task.run('jshint');
             grunt.task.run('uglify');
         } else {
             grunt.fail.fatal("not in an amd or yui directory");
